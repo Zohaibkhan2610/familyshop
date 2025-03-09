@@ -1,23 +1,30 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { FaStar } from "react-icons/fa";
 
 const ItemCard = ({
   imageUrl,
   productName,
   productDescription,
   initialStockQuantity,
-  isAvailable,
   brandName,
   priceInUSD,
   availableSizes,
-  ratingOutOfFive,
   customerReviewScore,
+  ratingOutOfFive,
 }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [stockQuantity, setStockQuantity] = useState(initialStockQuantity);
   const [quantity, setQuantity] = useState(1);
+  const [userRating, setUserRating] = useState(null);
+  const [hoverRating, setHoverRating] = useState(null);
+  const [showFullImage, setShowFullImage] = useState(false);
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    setStockQuantity(initialStockQuantity);
+  }, [initialStockQuantity]);
 
   const toggleDescription = useCallback(() => {
     setShowFullDescription((prev) => !prev);
@@ -35,147 +42,119 @@ const ItemCard = ({
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [handleClickOutside]);
 
   const handleIncrease = () => {
-    if (quantity < stockQuantity) {
-      setQuantity(quantity + 1);
-    }
+    if (quantity < stockQuantity) setQuantity((prev) => prev + 1);
   };
 
   const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+    if (quantity > 1) setQuantity((prev) => prev - 1);
   };
 
   const handlePurchase = () => {
     if (stockQuantity >= quantity) {
-      setStockQuantity(stockQuantity - quantity);
+      setStockQuantity((prev) => prev - quantity);
       setQuantity(1);
       alert(`${quantity} item(s) purchased successfully!`);
     }
   };
 
+  const handleRatingClick = (rating) => {
+    setUserRating(rating);
+  };
+
   return (
-    <div className="bg-white shadow-lg rounded-2xl p-4 max-w-sm border border-gray-200 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 h-[600px] flex flex-col relative overflow-hidden">
+    <div className="bg-white shadow-lg rounded-2xl p-4 w-[300px] h-[400px] border border-gray-300 flex flex-col relative overflow-hidden">
+      {/* Image */}
       {imageUrl && (
         <img
           src={imageUrl}
           alt={productName}
-          className="w-full h-40 object-cover rounded-xl shadow-md"
+          className="w-full h-48 object-cover rounded-xl shadow-md cursor-pointer"
+          onClick={() => setShowFullImage(true)}
         />
       )}
-      <h2 className="text-xl font-bold text-gray-900 mt-4 tracking-wide">
-        {productName}
-      </h2>
-      <div className="text-gray-600 mt-2 flex-grow overflow-hidden">
-        <p className={`line-clamp-${showFullDescription ? "unset" : "3"}`}>
-          {productDescription}
-        </p>
-        <button
-          onClick={toggleDescription}
-          className="text-blue-600 underline mt-1 font-medium transition hover:text-blue-800"
-          aria-label="Toggle description"
-        >
+
+      {showFullImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setShowFullImage(false)}>
+          <img src={imageUrl} alt={productName} className="max-w-full max-h-full rounded-xl" />
+        </div>
+      )}
+
+      {/* Product Details */}
+      <div className="text-gray-700 mt-2 text-sm">
+        <h2 className="text-md font-bold text-gray-900">{productName}</h2>
+        <div className={`transition-all duration-300 ${showFullDescription ? "overflow-y-auto" : "overflow-hidden"}`} style={{ maxHeight: "40px" }}>
+          <p className="text-xs text-gray-600">{productDescription}</p>
+        </div>
+        <button onClick={toggleDescription} className="text-blue-600 text-xs font-medium mt-1 hover:text-blue-800">
           {showFullDescription ? "Show Less" : "Read More"}
         </button>
       </div>
 
-      {/* Stock Display */}
-      <p className="text-gray-800 font-semibold mt-2">
-        <span
-          className={`text-${
-            stockQuantity > 0 ? "green" : "red"
-          }-500 font-medium`}
-        >
-          Stock: <span className="font-bold">{stockQuantity}</span>{" "}
-          {stockQuantity > 0 ? "(In Stock)" : "(Out of Stock)"}
-        </span>{" "}
-        | <span className="text-blue-500 font-medium">Brand: {brandName}</span>
-      </p>
-
-      <p className="text-lg font-bold mt-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-2 py-1 inline-block rounded-lg shadow-md">
-        ${priceInUSD}
-      </p>
-
-      {/* Quantity Selector */}
-      <div className="flex items-center justify-center mt-3 space-x-3">
-        <button
-          onClick={handleDecrease}
-          className="bg-gray-300 px-3 py-2 rounded-lg text-gray-800 font-bold shadow-sm hover:bg-gray-400"
-        >
-          −
-        </button>
-        <span className="text-lg font-semibold">{quantity}</span>
-        <button
-          onClick={handleIncrease}
-          className="bg-gray-300 px-3 py-2 rounded-lg text-gray-800 font-bold shadow-sm hover:bg-gray-400"
-          disabled={quantity >= stockQuantity}
-        >
-          +
-        </button>
+      {/* Rating */}
+      <div className="flex gap-2 items-center mt-2 text-yellow-500 text-xs">
+         {/* Quantity Selector */}
+      <div className="flex items-center w-[80px] justify-center mt-2 space-x-3 text-xs">
+        <button onClick={handleDecrease} className="bg-gray-300 text-black px-3 py-2 rounded-lg shadow-sm">-</button>
+        <span className="text-black rounded-lg shadow-sm">{quantity}</span>
+        <button onClick={handleIncrease} className="bg-gray-300 text-black px-3 py-2 rounded-lg shadow-sm" disabled={quantity >= stockQuantity}>+</button>
+      </div>
+        {[...Array(5)].map((_, i) => {
+          const ratingValue = i + 1;
+          return (
+            <FaStar
+              key={i}
+              className="w-4 h-4 cursor-pointer"
+              color={(hoverRating || userRating || ratingOutOfFive) >= ratingValue ? "#FFD700" : "#A0AEC0"}
+              onClick={() => handleRatingClick(ratingValue)}
+              onMouseEnter={() => setHoverRating(ratingValue)}
+              onMouseLeave={() => setHoverRating(null)}
+            />
+          );
+        })}
+        <span className="text-gray-600 ml-2">({customerReviewScore} Reviews)</span>
       </div>
 
-      {/* Buttons and Size Selector in One Line */}
-      <div className="flex justify-between items-center mt-3 relative space-x-2">
-        <div ref={dropdownRef} className="relative w-1/3 h-10">
-          <button
-            onClick={toggleDropdown}
-            className="bg-gray-300 px-4 py-2 rounded-lg w-full text-gray-800 font-medium border border-gray-400 shadow-sm transition hover:bg-gray-400 text-center truncate"
-            aria-haspopup="listbox"
-          >
-            {selectedSize ? `Size: ${selectedSize}` : "Select Size"}
+      {/* Stock, Brand & Price */}
+      <p className="text-gray-800 font-semibold mt-1 text-xs flex justify-between">
+        <span className={`${stockQuantity > 0 ? "text-green-500" : "text-red-500"} text-lg`}> <span className="text-black text-sm">Stock:</span> {stockQuantity}</span>
+        <span className="text-blue-500">Brand: {brandName}</span>
+        <span className="font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-white px-2 py-1 rounded-lg shadow-md">${priceInUSD}</span>
+      </p>
+
+     
+
+      {/* Size Selector & Purchase Buttons */}
+      <div className="flex justify-between items-center mt-1 text-xs space-x-3">
+        {/* Size Dropdown */}
+        <div ref={dropdownRef} className="relative w-1/3">
+          <button onClick={toggleDropdown} className="bg-gray-300 px-2 py-2 w-full rounded-lg text-gray-800 font-medium border border-gray-400 shadow-sm">
+            {selectedSize ? `Size: ${selectedSize}` : "Size"}
           </button>
           {dropdownOpen && (
-            <ul className="flex absolute w-[300px] scroll-auto bg-white border border-gray-300 rounded-lg -mt-25 shadow-lg z-10 max-h-40 overflow-auto transition-opacity duration-200 ease-in-out">
+            <ul className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10 max-h-40 overflow-auto transition-opacity duration-200">
               {availableSizes.map((size) => (
-                <li
-                  key={size}
-                  onClick={() => {
-                    setSelectedSize(size);
-                    setDropdownOpen(false);
-                  }}
-                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-800 font-medium transition text-center"
-                  role="option"
-                >
+                <li key={size} onClick={() => { setSelectedSize(size); setDropdownOpen(false); }} className="px-4 py-2 hover:bg-gray-100 cursor-pointer transition">
                   {size}
                 </li>
               ))}
             </ul>
           )}
         </div>
-        <button
-          onClick={handlePurchase}
-          className={`px-4 py-2 text-white rounded-lg transition w-1/3 h-10 font-semibold shadow-md ${
-            stockQuantity > 0
-              ? "bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={stockQuantity <= 0}
-        >
+
+        {/* Buttons */}
+        <button onClick={handlePurchase} className={`w-1/3 px-3 py-2 text-white rounded-lg transition shadow-md ${stockQuantity > 0 ? "bg-blue-600 hover:bg-blue-800" : "bg-gray-400 cursor-not-allowed"}`} disabled={stockQuantity <= 0}>
           Buy Now
         </button>
-        <button
-          className={`px-4 py-2 text-white rounded-lg transition w-1/3 h-10 font-semibold shadow-md ${
-            stockQuantity > 0
-              ? "bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800"
-              : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={stockQuantity <= 0}
-        >
+        <button className={`w-1/3 px-3 py-2 text-white rounded-lg transition shadow-md ${stockQuantity > 0 ? "bg-green-600 hover:bg-green-800" : "bg-gray-400 cursor-not-allowed"}`} disabled={stockQuantity <= 0}>
           Add to Cart
         </button>
       </div>
-
-      <p className="text-gray-600 text-center mt-3 text-sm font-medium">
-        Rating: {ratingOutOfFive} ⭐ ({customerReviewScore} Reviews)
-      </p>
     </div>
   );
 };
 
-export default ItemCard;
+export default React.memo(ItemCard);
