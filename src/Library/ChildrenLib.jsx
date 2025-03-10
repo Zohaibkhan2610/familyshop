@@ -3,9 +3,9 @@ export const ShoeChildCatalog = [
       productId: 1,
       imageUrl: "Children Shoe/prefix01.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 1000,
+      priceInUSD: 100,
       productName: "Nike Air Max 270 React",
-      category: "Men",
+      category: "Children",
       brandName: "Nike",
       productDescription:
         "The Nike Air Max 270 React is a versatile and comfortable shoe designed for everyday wear. It features a large Air Max unit in the heel for cushioning and support, as well as a React foam midsole for a responsive and energy-returning ride. The shoe also has a breathable mesh upper and a rubber outsole for durability and traction.",
@@ -18,9 +18,9 @@ export const ShoeChildCatalog = [
       productId: 2,
       imageUrl: "Children Shoe/prefix02.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 1200,
+      priceInUSD: 120,
       productName: "Adidas Ultraboost 21",
-      category: "Men",
+      category: "Children",
       brandName: "Adidas",
       productDescription:
         "The Adidas Ultraboost 21 is a high-performance running shoe that combines comfort and responsiveness. It features a Boost midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -33,9 +33,9 @@ export const ShoeChildCatalog = [
       productId: 3,
       imageUrl: "Children Shoe/prefix03.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 900,
+      priceInUSD: 90,
       productName: "New Balance 574",
-      category: "Men",
+      category: "Children",
       brandName: "New Balance",
       productDescription:
         "The New Balance 574 is a classic lifestyle shoe that combines comfort and style. It features a padded collar for support and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a classic silhouette that's perfect for everyday wear.",
@@ -48,9 +48,9 @@ export const ShoeChildCatalog = [
       productId: 4,
       imageUrl: "Children Shoe/prefix04.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 1100,
+      priceInUSD: 110,
       productName: "Under Armour HOVR Phantom",
-      category: "Men",
+      category: "Children",
       brandName: "Under Armour",
       productDescription:
         "The Under Armour HOVR Phantom is a high-performance running shoe designed for athletes. It features a responsive HOVR midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -63,9 +63,9 @@ export const ShoeChildCatalog = [
       productId: 5,
       imageUrl: "Children Shoe/prefix05.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 800,
+      priceInUSD: 88,
       productName: "Reebok Classic Leather",
-      category: "Men",
+      category: "Children",
       brandName: "Reebok",
       productDescription:
         "The Reebok Classic Leather is a classic lifestyle shoe that combines style and comfort. It features a leather upper for durability and a rubber outsole for traction. The shoe has a classic silhouette that's perfect for everyday wear.",
@@ -78,9 +78,9 @@ export const ShoeChildCatalog = [
       productId: 6,
       imageUrl: "Children Shoe/prefix06.png",
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
-      priceInUSD: 1300,
+      priceInUSD: 130,
       productName: "Asics Gel-Nimbus 23",
-      category: "Men",
+      category: "Children",
       brandName: "Asics",
       productDescription:
         "The Asics Gel-Nimbus 23 is a high-performance running shoe designed for runners. It features a responsive Gel midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -95,7 +95,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Brooks Ghost 14",
-      category: "Men",
+      category: "Children",
       brandName: "Brooks",
       productDescription:
         "The Brooks Ghost 14 is a high-performance running shoe designed for runners. It features a responsive cushioning system for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -110,7 +110,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1150,
       productName: "Merrell Bare Access 6",
-      category: "Men",
+      category: "Children",
       brandName: "Merrell",
       productDescription:
         "The Merrell Bare Access 6 is a versatile hiking shoe designed for outdoor enthusiasts. It features a breathable mesh upper and a durable rubber outsole for traction. The shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -125,7 +125,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 850,
       productName: "Salomon Speedcross 4",
-      category: "Men",
+      category: "Children",
       brandName: "Salomon",
       productDescription:
         "The Salomon Speedcross 4 is a high-performance trail running shoe designed for runners. It features a responsive midsole for energy return and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -140,7 +140,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Hoka One One Clifton 7",
-      category: "Men",
+      category: "Children",
       brandName: "Hoka One One",
       productDescription:
         "The Hoka One One Clifton 7 is a versatile running shoe designed for runners. It features a responsive midsole for energy return and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -155,7 +155,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1100,
       productName: "Mizuno Wave Sky",
-      category: "Men",
+      category: "Children",
       brandName: "Mizuno",
       productDescription:
         "The Mizuno Wave Sky is a high-performance running shoe designed for runners. It features a responsive Wave midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -170,7 +170,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "On Cloud X",
-      category: "Men",
+      category: "Children",
       brandName: "On",
       productDescription:
         "The On Cloud X is a high-performance running shoe designed for runners. It features a responsive Cloud foam midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -185,7 +185,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1200,
       productName: "Altra Escalante 5",
-      category: "Men",
+      category: "Children",
       brandName: "Altra",
       productDescription:
         "The Altra Escalante 5 is a versatile running shoe designed for runners. It features a responsive EVA midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -200,7 +200,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Brooks Glycerin 19",
-      category: "Men",
+      category: "Children",
       brandName: "Brooks",
       productDescription:
         "The Brooks Glycerin 19 is a high-performance running shoe designed for runners. It features a responsive cushioning system for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -215,7 +215,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1100,
       productName: "New Balance 997",
-      category: "Men",
+      category: "Children",
       brandName: "New Balance",
       productDescription:
         "The New Balance 997 is a classic lifestyle shoe that combines style and comfort. It features a padded collar for support and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a classic silhouette that's perfect for everyday wear.",
@@ -230,7 +230,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Under Armour HOVR Phantom 2",
-      category: "Men",
+      category: "Children",
       brandName: "Under Armour",
       productDescription:
         "The Under Armour HOVR Phantom 2 is a high-performance running shoe designed for athletes. It features a responsive HOVR midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -245,7 +245,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1200,
       productName: "Adidas Ultraboost 22",
-      category: "Men",
+      category: "Children",
       brandName: "Adidas",
       productDescription:
         "The Adidas Ultraboost 22 is a high-performance running shoe that combines comfort and responsiveness. It features a Boost midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -260,7 +260,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Reebok Classic Leather 2",
-      category: "Men",
+      category: "Children",
       brandName: "Reebok",
       productDescription:
         "The Reebok Classic Leather 2 is a classic lifestyle shoe that combines style and comfort. It features a leather upper for durability and a rubber outsole for traction. The shoe has a classic silhouette that's perfect for everyday wear.",
@@ -275,7 +275,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1100,
       productName: "Nike Air Max 270 React 2",
-      category: "Men",
+      category: "Children",
       brandName: "Nike",
       productDescription:
         "The Nike Air Max 270 React 2 is a versatile and comfortable shoe designed for everyday wear. It features a large Air Max unit in the heel for cushioning and support, as well as a React foam midsole for a responsive and energy-returning ride. The shoe also has a breathable mesh upper and a rubber outsole for durability and traction.",
@@ -290,7 +290,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Merrell Bare Access 7",
-      category: "Men",
+      category: "Children",
       brandName: "Merrell",
       productDescription:
         "The Merrell Bare Access 7 is a versatile hiking shoe designed for outdoor enthusiasts. It features a breathable mesh upper and a durable rubber outsole for traction. The shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -305,7 +305,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1200,
       productName: "Asics Gel-Nimbus 24",
-      category: "Men",
+      category: "Children",
       brandName: "Asics",
       productDescription:
         "The Asics Gel-Nimbus 24 is a high-performance running shoe designed for runners. It features a responsive Gel midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -320,7 +320,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Salomon Speedcross 5",
-      category: "Men",
+      category: "Children",
       brandName: "Salomon",
       productDescription:
         "The Salomon Speedcross 5 is a high-performance trail running shoe designed for runners. It features a responsive midsole for energy return and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -335,7 +335,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1100,
       productName: "Hoka One One Clifton 8",
-      category: "Men",
+      category: "Children",
       brandName: "Hoka One One",
       productDescription:
         "The Hoka One One Clifton 8 is a versatile running shoe designed for runners. It features a responsive midsole for energy return and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a lightweight and flexible design that provides excellent support and stability on various terrains.",
@@ -350,7 +350,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Mizuno Wave Sky 2",
-      category: "Men",
+      category: "Children",
       brandName: "Mizuno",
       productDescription:
         "The Mizuno Wave Sky 2 is a high-performance running shoe designed for runners. It features a responsive Wave midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -365,7 +365,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1200,
       productName: "Altra Escalante 6",
-      category: "Men",
+      category: "Children",
       brandName: "Altra",
       productDescription:
         "The Altra Escalante 6 is a versatile running shoe designed for runners. It features a responsive EVA midsole for cushioning and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -380,7 +380,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Brooks Glycerin 20",
-      category: "Men",
+      category: "Children",
       brandName: "Brooks",
       productDescription:
         "The Brooks Glycerin 20 is a high-performance running shoe designed for runners. It features a responsive cushioning system for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -395,7 +395,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1100,
       productName: "New Balance 998",
-      category: "Men",
+      category: "Children",
       brandName: "New Balance",
       productDescription:
         "The New Balance 998 is a classic lifestyle shoe that combines style and comfort. It features a padded collar for support and a durable rubber outsole for traction. The upper is made of a breathable mesh material, and the shoe has a classic silhouette that's perfect for everyday wear.",
@@ -410,7 +410,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Under Armour HOVR Phantom 3",
-      category: "Men",
+      category: "Children",
       brandName: "Under Armour",
       productDescription:
         "The Under Armour HOVR Phantom 3 is a high-performance running shoe designed for athletes. It features a responsive HOVR midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -425,7 +425,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 1200,
       productName: "Adidas Ultraboost 23",
-      category: "Men",
+      category: "Children",
       brandName: "Adidas",
       productDescription:
         "The Adidas Ultraboost 23 is a high-performance running shoe that combines comfort and responsiveness. It features a Boost midsole for energy return and a stable heel-to-toe transition. The upper is made of a breathable mesh material, and the outsole provides excellent traction on various surfaces.",
@@ -440,7 +440,7 @@ export const ShoeChildCatalog = [
       availableSizes: ["7", "8", "9", "10", "11", "12", "13", "14", "15"],
       priceInUSD: 950,
       productName: "Reebok Classic Leather 3",
-      category: "Men",
+      category: "Children",
       brandName: "Reebok",
       productDescription:
         "The Reebok Classic Leather 3 is a classic lifestyle shoe that combines style and comfort. It features a leather upper for durability and a rubber outsole for traction. The shoe has a classic silhouette that's perfect for everyday wear.",
