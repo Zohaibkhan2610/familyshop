@@ -5,7 +5,7 @@ import ItemCard from "./../../Components/Card";
 function WomenShoe() {
   return (
     <div className="relative pt-16 flex justify-center items-center">
-      <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 z-10">
+      <div className="w-[90%] flex flex-wrap justify-center gap-6 p-4 z-10">
         {ShoeWomenCatalog.map((product) => (
           <ItemCard
             key={product.productId}
