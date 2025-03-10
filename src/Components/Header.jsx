@@ -4,7 +4,7 @@ import Navbar from '../Layout/Navbar'
 function Header() {
   return (
     <>
-      <header className="bg-amber-300">
+      <header className="relative">
         <Navbar/>
       </header>
     </>

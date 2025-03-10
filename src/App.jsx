@@ -10,9 +10,9 @@ function App() {
     <Header/>
       <Routes>
         <Route path="/" Component={Home}/>
-        <Route path="/ChildrenShoe" Component={ChildrenShoe}/>
-        <Route path="/WomenShoe" Component={WomenShoe}/>
-        <Route path="/MenShoe" Component={MenShoe}/>
+        <Route path="/Children" Component={ChildrenShoe}/>
+        <Route path="/Women" Component={WomenShoe}/>
+        <Route path="/Men" Component={MenShoe}/>
       </Routes>
     </BrowserRouter>
   );

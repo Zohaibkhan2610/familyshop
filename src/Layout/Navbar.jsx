@@ -37,7 +37,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white border-b border-gray-200 dark:bg-gray-900 px-4 py-3 shadow-md">
+    <nav className="bg-white fixed z-50 w-full border-b border-gray-200 dark:bg-gray-900 px-4 py-3 shadow-md">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-blue-600 flex items-center">
@@ -64,7 +64,7 @@ const Navbar = () => {
               Categories
             </button>
             {categoryOpen && (
-              <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+              <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                 <Link onClick={() => setCategoryOpen(false)}
                   to="/Men"
                   className="block px-4 py-2 hover:bg-gray-100"
