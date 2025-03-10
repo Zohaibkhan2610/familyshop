@@ -9,4 +9,9 @@ export default defineConfig({
     react()
 
   ],
+  server: {
+    host: '0.0.0.0', // Allows access from mobile
+    port: 5173, // Default Vite port
+    strictPort: true, // Prevents changing ports
+  },
 })

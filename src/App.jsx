@@ -4,9 +4,11 @@ import ChildrenShoe from "./Pages/Children/ChildrenShoe";
 import WomenShoe from "./Pages/Women/WomenShoe";
 import Header from "./Components/Header";
 import MenShoe from "./Pages/Men/MenShoe";
+import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
     <Header/>
       <Routes>
         <Route path="/" Component={Home}/>

@@ -4,7 +4,7 @@ import ItemCard from "./../../Components/Card";
 
 function ChildrenShoe() {
   return (
-    <div className="relative flex justify-center items-center">
+    <div className="relative pt-16 flex justify-center items-center">
       <div className="w-[90%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 z-10">
         {ShoeChildCatalog.map((product) => (
           <ItemCard
