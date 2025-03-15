@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { FaStar } from "react-icons/fa";
+import { WishlistContext } from "../Context/WishlistContext"; 
 
 const ItemCard = ({
   imageUrl,
@@ -16,11 +17,14 @@ const ItemCard = ({
   const [selectedSize, setSelectedSize] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [stockQuantity, setStockQuantity] = useState(initialStockQuantity);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1); // Quantity state for this card
   const [userRating, setUserRating] = useState(null);
   const [hoverRating, setHoverRating] = useState(null);
   const [showFullImage, setShowFullImage] = useState(false);
   const dropdownRef = useRef(null);
+
+  // Access the WishlistContext
+  const { addToWishlist } = React.useContext(WishlistContext);
 
   useEffect(() => {
     setStockQuantity(initialStockQuantity);
@@ -65,6 +69,19 @@ const ItemCard = ({
     setUserRating(rating);
   };
 
+  // Function to handle adding an item to the wishlist
+  const handleAddToCart = () => {
+    const item = {
+      imageUrl,
+      productName,
+      productDescription,
+      priceInUSD,
+      brandName,
+      quantity, // Include the selected quantity in the wishlist item
+    };
+    addToWishlist(item); // Add the item to the wishlist
+  };
+
   return (
     <div className="bg-white shadow-lg rounded-2xl p-4 w-[310px] h-fit border border-gray-300 flex flex-col relative overflow-hidden">
       {/* Image */}
@@ -98,7 +115,7 @@ const ItemCard = ({
       <div className="flex gap-2 items-center mt-2 text-yellow-500 text-xs">
          {/* Quantity Selector */}
       <div className="flex items-center w-[80px] justify-center mt-2 space-x-3 text-xs">
-        <button onClick={handleDecrease} className="bg-gray-300 text-black px-3 py-2 rounded-lg shadow-sm">-</button>
+        <button onClick={handleDecrease} className="bg-gray-300 text-black px-3 py-2 rounded-lg shadow-sm" disabled={quantity <= 1}>-</button>
         <span className="text-black rounded-lg shadow-sm">{quantity}</span>
         <button onClick={handleIncrease} className="bg-gray-300 text-black px-3 py-2 rounded-lg shadow-sm" disabled={quantity >= stockQuantity}>+</button>
       </div>
@@ -124,7 +141,7 @@ const ItemCard = ({
       <p className="text-gray-800 font-semibold mt-1 text-sm flex items-center justify-between">
         <span className={`${stockQuantity > 0 ? "text-green-500" : "text-red-500"} text-lg`}> <span className="text-black text-xs">Stock:</span> {stockQuantity}</span>
         <span className="text-blue-500"><span className="text-black text-xs">Brand:</span> {brandName}</span>
-        <span className="font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-white px-2 py-1 rounded-lg shadow-md">${priceInUSD}</span>
+        <span className="font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-white px-2 py-1 rounded-lg shadow-md">${priceInUSD * quantity}</span>
       </p>
 
      
@@ -151,7 +168,11 @@ const ItemCard = ({
         <button onClick={handlePurchase} className={`w-[90px] px-3 py-2 text-white rounded-lg transition shadow-md ${stockQuantity > 0 ? "bg-blue-600 hover:bg-blue-800" : "bg-gray-400 cursor-not-allowed"}`} disabled={stockQuantity <= 0}>
           Buy Now
         </button>
-        <button className={`w-[130px] px-3 py-2 text-white rounded-lg transition shadow-md ${stockQuantity > 0 ? "bg-green-600 hover:bg-green-800" : "bg-gray-400 cursor-not-allowed"}`} disabled={stockQuantity <= 0}>
+        <button
+          onClick={handleAddToCart}
+          className={`w-[130px] px-3 py-2 text-white rounded-lg transition shadow-md ${stockQuantity > 0 ? "bg-green-600 hover:bg-green-800" : "bg-gray-400 cursor-not-allowed"}`}
+          disabled={stockQuantity <= 0}
+        >
           Add to Cart
         </button>
       </div>
@@ -159,4 +180,4 @@ const ItemCard = ({
   );
 };
 
-export default React.memo(ItemCard);
+export default ItemCard;
