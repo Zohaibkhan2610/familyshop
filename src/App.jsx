@@ -10,6 +10,9 @@ import RegistrationPage from "./Pages/Registartion/RegisterPage";
 import { WishlistProvider } from "./Context/WishlistContext";
 import LoginPage from "./Pages/Registartion/LoginPage";
 import ProfilePage from "./Pages/Registartion/ProfilePage";
+import About from "./Pages/About";
+import Services from "./Pages/Services";
+import Contact from "./Pages/Contact";
 function App() {
   return (
     <WishlistProvider>
@@ -19,6 +22,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" Component={Home} />
+            <Route path="/Services" Component={Services} />
+            <Route path="/Contact" Component={Contact} />
+            <Route path="/About" Component={About} />
             <Route path="/login" Component={LoginPage} />
             <Route path="/Register" Component={RegistrationPage} />
             <Route path="/Profile" Component={ProfilePage} />
