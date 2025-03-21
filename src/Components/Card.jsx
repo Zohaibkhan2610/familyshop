@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { FaStar } from "react-icons/fa";
 import { WishlistContext } from "../Context/WishlistContext"; 
+import { toast } from "react-toastify";
 
 const ItemCard = ({
   imageUrl,
@@ -61,7 +62,7 @@ const ItemCard = ({
     if (stockQuantity >= quantity) {
       setStockQuantity((prev) => prev - quantity);
       setQuantity(1);
-      alert(`${quantity} item(s) purchased successfully!`);
+      toast.success(`${quantity} item(s) purchased successfully!`);
     }
   };
 

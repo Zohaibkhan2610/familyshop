@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { toast } from "react-toastify";
 
 export const WishlistContext = createContext();
 
@@ -11,9 +12,23 @@ export const WishlistProvider = ({ children }) => {
 
     if (!isAlreadyInWishlist) {
       setWishlist((prevWishlist) => [...prevWishlist, item]);
-      alert(`${item.productName} added to wishlist!`);
+      toast.success(`${item.productName} added to wishlist!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     } else {
-      alert(`${item.productName} is already in your wishlist.`);
+      toast.info(`${item.productName} is already in your wishlist.`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -31,7 +46,14 @@ export const WishlistProvider = ({ children }) => {
     setWishlist((prevWishlist) =>
       prevWishlist.filter((item) => item.productName !== productName)
     );
-    alert(`${productName} removed from wishlist.`);
+    toast.success(`${productName} removed from wishlist.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
   };
 
   // Function to handle purchasing an item from the wishlist
@@ -43,7 +65,14 @@ export const WishlistProvider = ({ children }) => {
           if (remainingQuantity > 0) {
             return { ...item, quantity: remainingQuantity };
           } else {
-            alert(`You have purchased all ${quantityToBuy} units of ${productName}.`);
+            toast.success(`You have purchased all ${quantityToBuy} units of ${productName}.`, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
             return null; // Remove the item from the wishlist
           }
         }
@@ -55,7 +84,14 @@ export const WishlistProvider = ({ children }) => {
 
     // Update the global stock
     updateStock(productName, quantityToBuy);
-    alert(`You have successfully purchased ${quantityToBuy} units of ${productName}.`);
+    toast.success(`You have successfully purchased ${quantityToBuy} units of ${productName}.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
   };
 
   return (

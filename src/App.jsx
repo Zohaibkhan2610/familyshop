@@ -6,13 +6,17 @@ import Header from "./Components/Header";
 import MenShoe from "./Pages/Men/MenShoe";
 import ScrollToTop from "./Components/ScrollToTop";
 import { AuthProvider } from "./Context/AuthContext";
-import RegistrationPage from "./Pages/Registartion/RegisterPage"; 
+import RegistrationPage from "./Pages/Account/RegisterPage"; 
 import { WishlistProvider } from "./Context/WishlistContext";
-import LoginPage from "./Pages/Registartion/LoginPage";
-import ProfilePage from "./Pages/Registartion/ProfilePage";
+import LoginPage from "./Pages/Account/LoginPage";
+import ProfilePage from "./Pages/Account/ProfilePage";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
+import WishlistPage from "./Pages/Account/WishlistPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SettingsPage from "./Pages/Account/SettingsPage";
 function App() {
   return (
     <WishlistProvider>
@@ -31,10 +35,14 @@ function App() {
             <Route path="/Children" Component={ChildrenShoe} />
             <Route path="/Women" Component={WomenShoe} />
             <Route path="/Men" Component={MenShoe} />
+            <Route path="/Settings" Component={SettingsPage} />
+            <Route path="/Wishlist" Component={WishlistPage}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
+      <ToastContainer />
     </WishlistProvider>
+    
   );
 }
 

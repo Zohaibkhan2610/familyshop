@@ -1,11 +1,30 @@
-import React, { createContext, useState } from 'react';
-import { RegisterData } from '../Library/Registration'
+import React, { createContext, useState, useEffect } from 'react';
+import { RegisterData } from '../Library/Registration';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+
+  // Initialize user from localStorage
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        // Validate that the user object has required fields
+        if (parsedUser && parsedUser.email) {
+          setUser(parsedUser);
+          setIsAuthenticated(true);
+        } else {
+          console.error('Invalid user data in localStorage:', parsedUser);
+        }
+      } catch (error) {
+        console.error('Failed to parse user data from localStorage:', error);
+      }
+    }
+  }, []);
 
   // Login Function
   const login = (credentials) => {
@@ -46,6 +65,11 @@ export const AuthProvider = ({ children }) => {
       name: userData.name,
       email: userData.email,
       password: userData.password, // In a real app, hash the password before storing it!
+      avatar: "default-avatar.jpg", // Default avatar
+      address: "", // Initialize as empty
+      country: "Egypt", // Default country
+      currency: "EGP", // Default currency
+      language: "English", // Default language
       orders: [], // Initialize as empty
       addresses: [], // Initialize as empty
       wishlist: [], // Initialize as empty
@@ -57,8 +81,15 @@ export const AuthProvider = ({ children }) => {
     console.log('Registered Users:', RegisterData);
   };
 
+  // Update User Profile Function
+  const updateUserProfile = (updatedData) => {
+    const updatedUser = { ...user, ...updatedData };
+    setUser(updatedUser);
+    localStorage.setItem('user', JSON.stringify(updatedUser)); // Persist the updated user
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, register }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, register, updateUserProfile }}>
       {children}
     </AuthContext.Provider>
   );
