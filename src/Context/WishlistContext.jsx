@@ -14,7 +14,7 @@ export const WishlistProvider = ({ children }) => {
       setWishlist((prevWishlist) => [...prevWishlist, item]);
       toast.success(`${item.productName} added to wishlist!`, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -23,7 +23,7 @@ export const WishlistProvider = ({ children }) => {
     } else {
       toast.info(`${item.productName} is already in your wishlist.`, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -48,7 +48,7 @@ export const WishlistProvider = ({ children }) => {
     );
     toast.success(`${productName} removed from wishlist.`, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -67,7 +67,7 @@ export const WishlistProvider = ({ children }) => {
           } else {
             toast.success(`You have purchased all ${quantityToBuy} units of ${productName}.`, {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 1000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -86,7 +86,7 @@ export const WishlistProvider = ({ children }) => {
     updateStock(productName, quantityToBuy);
     toast.success(`You have successfully purchased ${quantityToBuy} units of ${productName}.`, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
